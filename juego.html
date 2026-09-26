@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Gusanito Educativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <h1 id="game-title">🐛 Gusanito Educativo 🍃</h1>
+
+        <!-- Panel de Estado -->
+        <div class="status-panel">
+            <div id="label-meta">Meta: <strong id="max-target">5</strong></div>
+            <div>Busca el: <strong id="next-target" class="target-highlight">1</strong></div>
+            <div>Comidos: <strong id="score">0</strong></div>
+        </div>
+
+        <div class="message" id="message">¡Busca el elemento que está palpitando!</div>
+
+        <!-- Diseño de controles y lienzo -->
+        <div class="game-layout">
+            
+            <!-- D-pad Izquierdo -->
+            <div class="dpad-wrapper">
+                <div class="dpad">
+                    <button class="ctrl-btn btn-up" onclick="changeDirection('UP')">▲</button>
+                    <button class="ctrl-btn btn-left" onclick="changeDirection('LEFT')">◀</button>
+                    <button class="ctrl-btn btn-right" onclick="changeDirection('RIGHT')">▶</button>
+                    <button class="ctrl-btn btn-down" onclick="changeDirection('DOWN')">▼</button>
+                </div>
+            </div>
+
+            <!-- Lienzo del juego -->
+            <canvas id="gameCanvas" width="320" height="320"></canvas>
+
+            <!-- D-pad Derecho -->
+            <div class="dpad-wrapper">
+                <div class="dpad">
+                    <button class="ctrl-btn btn-up" onclick="changeDirection('UP')">▲</button>
+                    <button class="ctrl-btn btn-left" onclick="changeDirection('LEFT')">◀</button>
+                    <button class="ctrl-btn btn-right" onclick="changeDirection('RIGHT')">▶</button>
+                    <button class="ctrl-btn btn-down" onclick="changeDirection('DOWN')">▼</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Botones de Acción Inferiores -->
+        <div class="control-panel-buttons">
+            <button class="action-btn btn-pause" onclick="pauseGame()">⏸️ Pausa</button>
+            <button class="action-btn btn-play" onclick="resumeGame()">▶️ Play</button>
+            <button class="action-btn btn-exit" onclick="exitGame()">🚪 Salir</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
