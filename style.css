@@ -136,6 +136,9 @@ body {
     margin-bottom: 8px;
     min-height: 20px;
 }
+.dpad-top {
+    display: none;
+}
 
 /* Diseño del juego y controles laterales */
 .game-layout {
@@ -231,10 +234,14 @@ canvas {
 .btn-play { background: #10b981; }
 .btn-exit { background: #ef4444; }
 
-@media (min-width: 768px) {
+@media (min-width: 768px), (orientation: landscape) and (max-height: 600px) {
+    .dpad-top {
+        display: flex;
+    }
     .game-layout {
         flex-direction: row;
         justify-content: center;
+        gap: 15px;
     }
     
 }
